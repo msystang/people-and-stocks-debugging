@@ -22,9 +22,15 @@ struct Stock: Codable {
         return date.components(separatedBy: "-")[0]
     }
     
-
+    private enum CodingKeys: String, CodingKey {
+        case date
+        case opening = "open"
+        case closing = "close"
+    }
+    
+    
     private static func getStocks() -> [Stock] {
-        guard let fileName = Bundle.main.path(forResource: "applstockinfo", ofType: "jsong") else {fatalError()}
+        guard let fileName = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {fatalError()}
         let fileURL = URL(fileURLWithPath: fileName)
         do {
             let data = try Data(contentsOf: fileURL)

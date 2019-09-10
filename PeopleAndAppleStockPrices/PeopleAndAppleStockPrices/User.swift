@@ -45,8 +45,8 @@ struct User: Codable {
         let fileURL = URL(fileURLWithPath: fileName)
         do {
             let data = try Data(contentsOf: fileURL)
-            let users = try JSONDecoder().decode([User].self, from: data)
-            return users
+            let users = try JSONDecoder().decode(UserWrapper.self, from: data)
+            return users.results
         } catch {
             fatalError()
         }

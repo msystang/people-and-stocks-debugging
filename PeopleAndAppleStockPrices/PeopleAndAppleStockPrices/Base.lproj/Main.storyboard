@@ -123,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="L3S-bj-LB1"/>
                     <connections>
+                        <outlet property="userTableView" destination="5Ek-0g-Ixy" id="deJ-hc-XKq"/>
                         <outlet property="usersSearchBar" destination="maP-ZA-tgJ" id="wTp-nx-xvU"/>
                     </connections>
                 </viewController>

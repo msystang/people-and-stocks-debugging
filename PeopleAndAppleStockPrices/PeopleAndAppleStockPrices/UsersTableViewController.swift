@@ -23,9 +23,7 @@ class UsersTableViewController: UIViewController {
     }
     
     var filteredUsers: [User] {
-        guard searchedText != "" else {
-            return users
-        }
+        guard searchedText != "" else { return users }
         return users.filter{ $0.name.fullName.lowercased().contains(searchedText.lowercased())
         }
     }
@@ -37,6 +35,7 @@ class UsersTableViewController: UIViewController {
         super.viewDidLoad()
         loadUsers()
         userTableView.dataSource = self
+        usersSearchBar.delegate = self
     }
     
     private func loadUsers() {
@@ -46,11 +45,11 @@ class UsersTableViewController: UIViewController {
 
 extension UsersTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let user = users[indexPath.row]
+        let user = filteredUsers[indexPath.row]
         
         let subtitleCell = userTableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
         subtitleCell.textLabel?.text = user.name.fullName.capitalized

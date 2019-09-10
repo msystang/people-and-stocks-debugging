@@ -13,8 +13,10 @@ class StocksTableViewController: UIViewController {
     var stocks = [StocksByMonthAndYear]()
     
     @IBOutlet weak var stocksTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        stocksTableView.dataSource = self
         loadData()
     }
     
