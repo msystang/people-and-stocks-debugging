@@ -1,9 +1,9 @@
 ## People and Stock Prices: Debugging Exercise
 
 ## Instructions
-There are a number of issues with the project in this directory. There are crashes, errors, and features that do not work. These issues might occur in the Models, Views, and Controllers of the app. 
+There are a number of issues with the project in this directory. There are crashes, errors, and features that do not work. These issues might occur in the Models, Views, and Controllers of the app. The git history will not help you, as the creator of this repository forgot to make meaningful commits as they created the app. They are sorry about that.
 
-The gifs and information for the original assignment are in the section below. Debug the issues in this app!
+The gifs and information for the original assignment are in the sections below. Debug the issues in this app!
 
 
 ## Debugging Hints
